@@ -6,9 +6,8 @@ class Command:
     DELETE = '/delete'
     pass
 
-class Url:
-    TIKI = 'https://tiki\.vn/'
-    EXAMPLE_URL = TIKI + 'dien-thoai-iphone-12-pro-max-128gb-hang-chinh-hang-p70771651\.html'
+class File:
+    NAME= 'data.json'
     pass
 
 class Message:
@@ -18,3 +17,9 @@ class Message:
     HELP_LIST = 'Enter ' + Command.GET + ' to get URL list'
     
     HELP = '```1. 1) ' + HELP_ADD + ' \n 2) ' + HELP_LIST + '```'
+
+    def get_message(name, price, image):
+        # name = name[0, int(.find('-'))]
+        price = format(int(price), ",")
+
+        return '*'+ name + '*' + '\n *' + price +'*'  + '\n' + image.replace('\.', '.')
